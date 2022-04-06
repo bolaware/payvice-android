@@ -134,8 +134,6 @@ class _HomeContainerScreenState extends State<HomeContainerScreen> with WidgetsB
             stream: getRemoteProfileBloc.stream,
             builder: (context, snapshot) {
               if(snapshot.data is Success) {
-                final customer = (snapshot.data as Success<LoginResponse>).getData().customer;
-                print("fucking me sideways${customer.avatar}");
                 getMemoryProfileBloc.setProfile(snapshot.data);
               }
               return _widgetOptions.elementAt(_selectedIndex);
